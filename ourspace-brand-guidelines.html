@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OurSpace — Brand Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --burgundy:    #7D1A2E;
+    --burgundy-dk: #5C1020;
+    --burgundy-lt: #9B2238;
+    --cream:       #E8DFD0;
+    --cream-dk:    #D4C9B5;
+    --cream-lt:    #F5F0E8;
+    --gold:        #C9A96E;
+    --gold-lt:     #E2C99A;
+    --charcoal:    #1C1C1C;
+    --mid:         #5A5A5A;
+    --light:       #F9F6F1;
+    --white:       #FFFFFF;
+    --serif:       'Cormorant Garamond', Georgia, serif;
+    --sans:        'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--light);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--burgundy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+    border-bottom: 1px solid rgba(232,223,208,.15);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .nav-logo-img {
+    width: 32px; height: 32px;
+    object-fit: contain;
+  }
+  .nav-logo-img-placeholder {
+    width: 32px; height: 32px;
+    border: 1.5px solid rgba(232,223,208,.5);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; color: rgba(232,223,208,.5);
+  }
+  .nav-brand {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--cream);
+  }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(232,223,208,.65);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-tag {
+    font-size: 10px; letter-spacing: 2px; color: rgba(232,223,208,.4);
+    font-family: var(--sans);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--burgundy);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 120px 80px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 30%, rgba(201,169,110,.08) 0%, transparent 60%);
+  }
+  .hero-number {
+    position: absolute; top: 80px; right: 80px;
+    font-family: var(--serif); font-size: 220px; font-weight: 300;
+    color: rgba(232,223,208,.04);
+    line-height: 1; letter-spacing: -8px;
+    pointer-events: none; user-select: none;
+  }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(56px, 8vw, 112px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--cream);
+    margin-bottom: 32px;
+    max-width: 700px;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-size: 14px; letter-spacing: 1px; line-height: 1.7;
+    color: rgba(232,223,208,.55);
+    max-width: 380px;
+    margin-bottom: 64px;
+  }
+  .hero-meta {
+    display: flex; gap: 48px;
+    border-top: 1px solid rgba(232,223,208,.12);
+    padding-top: 32px;
+  }
+  .hero-meta-item { }
+  .hero-meta-label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(232,223,208,.35); margin-bottom: 6px;
+  }
+  .hero-meta-value {
+    font-family: var(--serif); font-size: 18px; font-weight: 400;
+    color: var(--cream);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 120px 80px;
+  }
+  section:nth-child(even) {
+    background: var(--white);
+  }
+
+  .section-header {
+    display: flex; align-items: flex-start; gap: 40px;
+    margin-bottom: 80px;
+  }
+  .section-num {
+    font-family: var(--serif); font-size: 80px; font-weight: 300;
+    color: rgba(125,26,46,.12);
+    line-height: 1; flex-shrink: 0;
+    margin-top: -8px;
+  }
+  .section-title-group { }
+  .section-eyebrow {
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(36px, 4vw, 52px);
+    font-weight: 400; line-height: 1.1;
+    color: var(--charcoal);
+  }
+  .section-title em { font-style: italic; color: var(--burgundy); }
+  .section-body {
+    font-size: 15px; line-height: 1.8; color: var(--mid);
+    max-width: 560px; margin-top: 16px;
+  }
+
+  /* ── LOGO SECTION ── */
+  .logo-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; margin-bottom: 48px;
+  }
+  .logo-cell {
+    aspect-ratio: 16/9;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px;
+    position: relative;
+  }
+  .logo-cell-light { background: var(--cream-lt); }
+  .logo-cell-dark  { background: var(--burgundy); }
+  .logo-cell-cream { background: var(--cream); }
+  .logo-cell-black { background: var(--charcoal); }
+  .logo-cell-label {
+    position: absolute; bottom: 16px; left: 20px;
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .logo-cell-light .logo-cell-label,
+  .logo-cell-cream .logo-cell-label { color: rgba(28,28,28,.35); }
+  .logo-cell-dark .logo-cell-label,
+  .logo-cell-black .logo-cell-label { color: rgba(232,223,208,.35); }
+
+  .logo-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+  .logo-placeholder-icon {
+    width: 52px; height: 52px; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-placeholder-name {
+    font-family: var(--serif); font-size: 26px; letter-spacing: 6px; font-weight: 400;
+  }
+
+  /* Light bg: burgundy icon + burgundy text */
+  .logo-cell-light .logo-placeholder-icon,
+  .logo-cell-cream .logo-placeholder-icon {
+    border: 1.5px solid rgba(125,26,46,.25);
+    color: var(--burgundy); font-size: 10px;
+  }
+  .logo-cell-light .logo-placeholder-name,
+  .logo-cell-cream .logo-placeholder-name { color: var(--burgundy); }
+
+  /* Dark bg: cream icon + cream text */
+  .logo-cell-dark .logo-placeholder-icon,
+  .logo-cell-black .logo-placeholder-icon {
+    border: 1.5px solid rgba(232,223,208,.3);
+    color: var(--cream); font-size: 10px;
+  }
+  .logo-cell-dark .logo-placeholder-name,
+  .logo-cell-black .logo-placeholder-name { color: var(--cream); }
+
+  /* ── LOGO SPECS ── */
+  .logo-specs {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    margin-top: 48px;
+  }
+  .spec-card {
+    background: var(--light); padding: 32px;
+    border-left: 3px solid transparent;
+  }
+  .spec-card.accent { border-left-color: var(--burgundy); }
+  .spec-label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  .spec-value {
+    font-family: var(--serif); font-size: 22px; font-weight: 400;
+    color: var(--charcoal); margin-bottom: 6px;
+  }
+  .spec-desc {
+    font-size: 12px; line-height: 1.6; color: var(--mid);
+  }
+
+  /* ── CLEARSPACE ── */
+  .clearspace-demo {
+    display: flex; align-items: center; justify-content: center;
+    padding: 80px; background: var(--cream-lt);
+    margin: 48px 0; position: relative;
+  }
+  .clearspace-inner {
+    border: 1.5px dashed rgba(125,26,46,.3);
+    padding: 48px 64px;
+    display: flex; align-items: center; gap: 16px;
+    position: relative;
+  }
+  .clearspace-label {
+    position: absolute;
+    font-size: 10px; letter-spacing: 2px; color: rgba(125,26,46,.5);
+    text-transform: uppercase;
+  }
+  .clearspace-label.top    { top: -24px; left: 50%; transform: translateX(-50%); }
+  .clearspace-label.bottom { bottom: -24px; left: 50%; transform: translateX(-50%); }
+  .clearspace-label.left   { left: -48px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+  .clearspace-label.right  { right: -48px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+  .clearspace-logo {
+    font-family: var(--serif); font-size: 28px; letter-spacing: 6px;
+    color: var(--burgundy); font-weight: 400;
+  }
+
+  /* ── COLOURS ── */
+  .colours-primary {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 2px; margin-bottom: 2px;
+  }
+  .colours-secondary {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .colour-swatch {
+    padding: 40px 32px 32px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    min-height: 200px;
+    position: relative;
+  }
+  .colour-swatch.tall { min-height: 300px; }
+  .swatch-name {
+    font-family: var(--serif); font-size: 20px; font-weight: 400;
+    margin-bottom: 6px;
+  }
+  .swatch-hex {
+    font-size: 11px; letter-spacing: 2px; font-family: monospace;
+    margin-bottom: 4px; opacity: .7;
+  }
+  .swatch-use {
+    font-size: 11px; letter-spacing: 1px; opacity: .55;
+  }
+
+  .sw-burgundy { background: #7D1A2E; color: var(--cream); }
+  .sw-burgundy-dk { background: #5C1020; color: var(--cream); }
+  .sw-burgundy-lt { background: #9B2238; color: var(--cream); }
+  .sw-gold   { background: #C9A96E; color: var(--charcoal); }
+  .sw-cream  { background: #E8DFD0; color: var(--charcoal); }
+  .sw-cream-lt { background: #F5F0E8; color: var(--charcoal); border: 1px solid #E0D8CC; }
+  .sw-charcoal { background: #1C1C1C; color: var(--cream); }
+
+  /* ── COLOUR USAGE ── */
+  .usage-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 48px;
+  }
+  .usage-card {
+    padding: 32px;
+    border: 1px solid rgba(28,28,28,.08);
+  }
+  .usage-percent {
+    font-family: var(--serif); font-size: 52px; font-weight: 300;
+    line-height: 1; margin-bottom: 12px;
+  }
+  .usage-card:nth-child(1) .usage-percent { color: var(--burgundy); }
+  .usage-card:nth-child(2) .usage-percent { color: var(--cream-dk); }
+  .usage-card:nth-child(3) .usage-percent { color: var(--gold); }
+  .usage-color-name {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--mid); margin-bottom: 8px;
+  }
+  .usage-desc { font-size: 13px; line-height: 1.6; color: var(--mid); }
+
+  /* ── TYPOGRAPHY ── */
+  .type-showcase {
+    margin: 48px 0;
+  }
+  .type-row {
+    display: grid; grid-template-columns: 200px 1fr;
+    align-items: start; gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(28,28,28,.08);
+  }
+  .type-meta { }
+  .type-font-name {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+  .type-usage {
+    font-size: 12px; line-height: 1.6; color: var(--mid);
+  }
+  .type-sample-serif {
+    font-family: var(--serif); font-size: clamp(40px, 5vw, 72px);
+    font-weight: 300; line-height: 1.1; color: var(--charcoal);
+  }
+  .type-sample-serif em { font-style: italic; color: var(--burgundy); }
+  .type-sample-sans {
+    font-family: var(--sans); font-size: 16px; line-height: 1.8;
+    font-weight: 300; color: var(--mid);
+    max-width: 560px;
+  }
+
+  .type-scale {
+    margin-top: 64px;
+  }
+  .type-scale-title {
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 32px;
+  }
+  .type-scale-row {
+    display: flex; align-items: baseline; gap: 32px;
+    padding: 16px 0; border-bottom: 1px solid rgba(28,28,28,.06);
+  }
+  .scale-label {
+    font-size: 11px; letter-spacing: 2px; color: var(--mid);
+    min-width: 80px; text-align: right;
+  }
+
+  /* ── BRAND VOICE ── */
+  .voice-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 2px; margin-top: 48px;
+  }
+  .voice-card {
+    padding: 48px 40px; position: relative;
+  }
+  .voice-card.do   { background: var(--cream-lt); }
+  .voice-card.dont { background: var(--charcoal); }
+  .voice-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 32px;
+    border-radius: 2px;
+  }
+  .voice-card.do .voice-tag   { background: var(--burgundy); color: var(--cream); }
+  .voice-card.dont .voice-tag { background: rgba(232,223,208,.1); color: rgba(232,223,208,.6); }
+  .voice-items { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+  .voice-item {
+    display: flex; align-items: flex-start; gap: 16px;
+  }
+  .voice-item-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    flex-shrink: 0; margin-top: 7px;
+  }
+  .voice-card.do   .voice-item-dot { background: var(--burgundy); }
+  .voice-card.dont .voice-item-dot { background: rgba(232,223,208,.3); }
+  .voice-item-text { font-size: 14px; line-height: 1.6; }
+  .voice-card.do   .voice-item-text { color: var(--charcoal); }
+  .voice-card.dont .voice-item-text { color: rgba(232,223,208,.6); }
+
+  /* ── TAGLINE ── */
+  .tagline-block {
+    text-align: center; padding: 80px 40px;
+    background: var(--burgundy);
+    margin: 2px 0;
+  }
+  .tagline-text {
+    font-family: var(--serif); font-size: clamp(24px, 3.5vw, 42px);
+    font-weight: 300; font-style: italic;
+    color: var(--cream); line-height: 1.4;
+    max-width: 700px; margin: 0 auto 24px;
+  }
+  .tagline-attr {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); opacity: .7;
+  }
+
+  /* ── DONT'S ── */
+  .dont-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 48px;
+  }
+  .dont-card {
+    border: 1px solid rgba(28,28,28,.08);
+    padding: 0; overflow: hidden;
+  }
+  .dont-preview {
+    height: 160px; display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .dont-preview::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 3px solid #C0392B;
+  }
+  .cross-line {
+    position: absolute; inset: 0;
+    pointer-events: none;
+  }
+  .cross-line::before,
+  .cross-line::after {
+    content: '';
+    position: absolute;
+    background: rgba(192,57,43,.5);
+    width: 100%; height: 2px;
+    top: 50%; left: 0;
+  }
+  .cross-line::before { transform: rotate(8deg); }
+  .cross-line::after  { transform: rotate(-8deg); }
+  .dont-label {
+    padding: 20px 24px;
+    font-size: 12px; line-height: 1.6; color: var(--mid);
+  }
+  .dont-label strong {
+    display: block; font-size: 13px; color: #C0392B;
+    margin-bottom: 4px; font-weight: 500;
+  }
+
+  /* ── PHOTOGRAPHY ── */
+  .photo-rules {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; margin-top: 48px;
+  }
+  .photo-rule {
+    padding: 40px 32px;
+  }
+  .photo-rule:nth-child(1) { background: var(--burgundy); }
+  .photo-rule:nth-child(2) { background: var(--cream); }
+  .photo-rule:nth-child(3) { background: var(--charcoal); }
+  .photo-rule-num {
+    font-family: var(--serif); font-size: 48px; font-weight: 300;
+    margin-bottom: 16px; opacity: .3;
+  }
+  .photo-rule:nth-child(1) .photo-rule-num,
+  .photo-rule:nth-child(3) .photo-rule-num { color: var(--cream); }
+  .photo-rule:nth-child(2) .photo-rule-num { color: var(--charcoal); }
+  .photo-rule-title {
+    font-family: var(--serif); font-size: 22px; font-weight: 400;
+    margin-bottom: 12px;
+  }
+  .photo-rule:nth-child(1) .photo-rule-title,
+  .photo-rule:nth-child(3) .photo-rule-title { color: var(--cream); }
+  .photo-rule:nth-child(2) .photo-rule-title { color: var(--charcoal); }
+  .photo-rule-desc {
+    font-size: 13px; line-height: 1.7;
+  }
+  .photo-rule:nth-child(1) .photo-rule-desc { color: rgba(232,223,208,.65); }
+  .photo-rule:nth-child(2) .photo-rule-desc { color: var(--mid); }
+  .photo-rule:nth-child(3) .photo-rule-desc { color: rgba(232,223,208,.55); }
+
+  /* ── DIGITAL APPLICATIONS ── */
+  .apps-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; margin-top: 48px;
+  }
+  .app-card {
+    border: 1px solid rgba(28,28,28,.08);
+    overflow: hidden;
+  }
+  .app-preview {
+    padding: 32px 40px;
+    min-height: 200px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .app-preview.instagram { background: linear-gradient(135deg, var(--burgundy) 0%, #5C1020 100%); }
+  .app-preview.youtube   { background: var(--charcoal); }
+  .app-preview.podcast   { background: var(--cream); }
+  .app-preview.email     { background: var(--cream-lt); }
+  .app-label {
+    padding: 20px 24px;
+    border-top: 1px solid rgba(28,28,28,.08);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .app-name { font-size: 13px; font-weight: 500; letter-spacing: 1px; }
+  .app-spec { font-size: 11px; letter-spacing: 1px; color: var(--mid); }
+
+  /* Mock Instagram post */
+  .mock-insta {
+    width: 180px; height: 180px; background: var(--burgundy-lt);
+    border: 2px solid rgba(232,223,208,.15);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px;
+  }
+  .mock-insta-brand {
+    font-family: var(--serif); font-size: 14px; letter-spacing: 4px; color: var(--cream);
+  }
+  .mock-insta-quote {
+    font-family: var(--serif); font-size: 11px; font-style: italic;
+    color: rgba(232,223,208,.7); text-align: center; padding: 0 12px;
+    line-height: 1.5;
+  }
+
+  /* Mock YouTube thumb */
+  .mock-thumb {
+    width: 280px; height: 158px; background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 12px;
+  }
+  .mock-thumb-tag {
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+  }
+  .mock-thumb-title {
+    font-family: var(--serif); font-size: 14px; color: var(--cream);
+    line-height: 1.3;
+  }
+
+  /* Mock podcast cover */
+  .mock-podcast {
+    width: 160px; height: 160px;
+    background: var(--burgundy);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px;
+  }
+  .mock-podcast-name {
+    font-family: var(--serif); font-size: 16px; letter-spacing: 4px; color: var(--cream);
+  }
+  .mock-podcast-sub {
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 80px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: end;
+  }
+  .footer-brand {
+    font-family: var(--serif); font-size: 48px; font-weight: 300;
+    color: var(--cream); letter-spacing: 6px;
+    margin-bottom: 16px;
+  }
+  .footer-statement {
+    font-size: 13px; line-height: 1.8; color: rgba(232,223,208,.45);
+    max-width: 360px;
+  }
+  .footer-meta { text-align: right; }
+  .footer-version {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(232,223,208,.3); margin-bottom: 8px;
+  }
+  .footer-copy {
+    font-size: 12px; color: rgba(232,223,208,.25);
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── PAGE NAV DOTS ── */
+  .page-dots {
+    position: fixed; right: 32px; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 12px; z-index: 50;
+  }
+  .page-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(125,26,46,.2);
+    transition: background .3s, transform .3s;
+    cursor: pointer; border: none;
+  }
+  .page-dot.active {
+    background: var(--burgundy);
+    transform: scale(1.5);
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    section { padding: 80px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .logo-grid, .colours-primary, .voice-grid, .apps-grid { grid-template-columns: 1fr; }
+    .colours-secondary { grid-template-columns: repeat(2,1fr); }
+    .type-row { grid-template-columns: 1fr; }
+    .dont-grid, .photo-rules, .logo-specs, .usage-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+    .footer-meta { text-align: left; }
+    .page-dots { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <!--
+      LOGO PLACEMENT:
+      Replace the placeholder div below with:
+      <img src="YOUR-LOGO-FILE.png" alt="OurSpace" class="nav-logo-img"/>
+      Use: CREAM version of the logo (#E8DFD0) — it sits on the burgundy nav bar.
+    -->
+    <div class="nav-logo-img-placeholder">LOGO</div>
+    <span class="nav-brand">OURSPACE</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#colour">Colour</a></li>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#voice">Voice</a></li>
+    <li><a href="#digital">Digital</a></li>
+  </ul>
+  <span class="nav-tag">Brand Guidelines · v1.0</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-number">01</div>
+  <p class="hero-eyebrow">OurSpace · Brand Guidelines · 2025</p>
+  <h1 class="hero-title">Brand<br/><em>Guidelines</em></h1>
+  <p class="hero-sub">A complete reference for how OurSpace looks, sounds, and feels — everywhere we show up.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Version</div>
+      <div class="hero-meta-value">1.0</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Year</div>
+      <div class="hero-meta-value">2025</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Category</div>
+      <div class="hero-meta-value">Faith · Marriage · Media</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO SECTION -->
+<section id="logo">
+  <div class="section-header reveal">
+    <div class="section-num">01</div>
+    <div class="section-title-group">
+      <p class="section-eyebrow">Identity</p>
+      <h2 class="section-title">Our <em>Logo</em></h2>
+      <p class="section-body">The OurSpace mark is made of two strokes — a small upper loop and a wide lower sweep — forming an abstract heart, with a cross rising from the top. It represents covenant, faith, and the space two people share. It is never stretched, recoloured, or separated.</p>
+    </div>
+  </div>
+
+  <!-- Logo on backgrounds -->
+  <div class="logo-grid reveal">
+    <div class="logo-cell logo-cell-light">
+      <!--
+        LOGO: Burgundy version (#7D1A2E) on light cream background.
+        File: ourspace-logo-burgundy.png or .svg
+      -->
+      <div class="logo-placeholder">
+        <div class="logo-placeholder-icon">ICON</div>
+        <div class="logo-placeholder-name">OURSPACE</div>
+      </div>
+      <div class="logo-cell-label">Primary · Light Background</div>
+    </div>
+    <div class="logo-cell logo-cell-dark">
+      <!--
+        LOGO: Cream version (#E8DFD0) on burgundy background.
+        File: ourspace-logo-cream.png or .svg
+      -->
+      <div class="logo-placeholder">
+        <div class="logo-placeholder-icon">ICON</div>
+        <div class="logo-placeholder-name">OURSPACE</div>
+      </div>
+      <div class="logo-cell-label">Primary · Dark Background</div>
+    </div>
+    <div class="logo-cell logo-cell-cream">
+      <!--
+        LOGO: Burgundy version on cream.
+        File: ourspace-logo-burgundy.png
+      -->
+      <div class="logo-placeholder">
+        <div class="logo-placeholder-icon">ICON</div>
+        <div class="logo-placeholder-name">OURSPACE</div>
+      </div>
+      <div class="logo-cell-label">Secondary · Cream Background</div>
+    </div>
+    <div class="logo-cell logo-cell-black">
+      <!--
+        LOGO: Cream version on charcoal.
+        File: ourspace-logo-cream.png
+      -->
+      <div class="logo-placeholder">
+        <div class="logo-placeholder-icon">ICON</div>
+        <div class="logo-placeholder-name">OURSPACE</div>
+      </div>
+      <div class="logo-cell-label">Secondary · Dark Background</div>
+    </div>
+  </div>
+
+  <!-- Clear space -->
+  <div class="clearspace-demo reveal">
+    <div class="clearspace-inner">
+      <span class="clearspace-label top">× height of the cross arm</span>
+      <span class="clearspace-label bottom">minimum clear space</span>
+      <span class="clearspace-label left">equal</span>
+      <span class="clearspace-label right">equal</span>
+      <div class="logo-placeholder" style="flex-direction:row; align-items:center; gap:12px;">
+        <div style="width:28px;height:28px;border:1.5px solid rgba(125,26,46,.3);display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(125,26,46,.4);">↑</div>
+        <span class="clearspace-logo">OURSPACE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Specs -->
+  <div class="logo-specs reveal">
+    <div class="spec-card accent">
+      <div class="spec-label">Minimum Size</div>
+      <div class="spec-value">24px / 8mm</div>
+      <div class="spec-desc">The icon alone may be used at 24px. The full lockup (icon + wordmark) should never appear below 120px wide.</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Icon Stroke Weight</div>
+      <div class="spec-value">Rounded · No fill</div>
+      <div class="spec-desc">The icon is always stroke-based with rounded line caps. It is never filled. Never outlined with a box or circle container.</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">File Formats</div>
+      <div class="spec-value">SVG · PNG · PDF</div>
+      <div class="spec-desc">Use SVG for all digital applications. Use high-resolution PNG (300dpi+) for print. Never use JPEG for the logo.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COLOUR SECTION -->
+<section id="colour">
+  <div class="section-header reveal">
+    <div class="section-num">02</div>
+    <div class="section-title-group">
+      <p class="section-eyebrow">Palette</p>
+      <h2 class="section-title">Brand <em>Colour</em></h2>
+      <p class="section-body">The OurSpace palette is rooted in warmth, depth, and faith. Burgundy is our soul — it speaks of covenant, passion, and seriousness. Cream is our breath — warmth, accessibility, and welcome. Gold is our accent — used sparingly, it signals something precious.</p>
+    </div>
+  </div>
+
+  <div class="colours-primary reveal">
+    <div class="colour-swatch sw-burgundy tall">
+      <div class="swatch-name">Covenant Burgundy</div>
+      <div class="swatch-hex">#7D1A2E</div>
+      <div class="swatch-use">Primary Brand Colour</div>
+    </div>
+    <div class="colour-swatch sw-burgundy-dk tall">
+      <div class="swatch-name">Deep Burgundy</div>
+      <div class="swatch-hex">#5C1020</div>
+      <div class="swatch-use">Hover / Shadow</div>
+    </div>
+    <div class="colour-swatch sw-burgundy-lt tall">
+      <div class="swatch-name">Rich Burgundy</div>
+      <div class="swatch-hex">#9B2238</div>
+      <div class="swatch-use">Highlight / Active</div>
+    </div>
+  </div>
+  <div class="colours-secondary reveal">
+    <div class="colour-swatch sw-cream">
+      <div class="swatch-name">Warm Cream</div>
+      <div class="swatch-hex">#E8DFD0</div>
+      <div class="swatch-use">Logo on Dark · Text</div>
+    </div>
+    <div class="colour-swatch sw-cream-lt">
+      <div class="swatch-name">Soft Cream</div>
+      <div class="swatch-hex">#F5F0E8</div>
+      <div class="swatch-use">Backgrounds · Cards</div>
+    </div>
+    <div class="colour-swatch sw-gold">
+      <div class="swatch-name">Covenant Gold</div>
+      <div class="swatch-hex">#C9A96E</div>
+      <div class="swatch-use">Accent · Labels</div>
+    </div>
+    <div class="colour-swatch sw-charcoal">
+      <div class="swatch-name">Deep Charcoal</div>
+      <div class="swatch-hex">#1C1C1C</div>
+      <div class="swatch-use">Body Text · Dark BG</div>
+    </div>
+  </div>
+
+  <div class="usage-grid reveal">
+    <div class="usage-card">
+      <div class="usage-percent">60%</div>
+      <div class="usage-color-name">Burgundy Family</div>
+      <div class="usage-desc">Backgrounds, headers, hero sections, navigation. Burgundy is the dominant presence of the brand.</div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-percent">35%</div>
+      <div class="usage-color-name">Cream & White</div>
+      <div class="usage-desc">Body areas, cards, text on dark backgrounds. Cream provides warmth and breathing room.</div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-percent">5%</div>
+      <div class="usage-color-name">Covenant Gold</div>
+      <div class="usage-desc">Labels, eyebrows, accents only. Gold is precious because it is rare. Never use it as a fill or background.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINE BREAK -->
+<div class="tagline-block reveal">
+  <p class="tagline-text">"Helping Christian couples build marriages that actually work."</p>
+  <p class="tagline-attr">OurSpace · Brand Statement</p>
+</div>
+
+<!-- TYPOGRAPHY SECTION -->
+<section id="typography">
+  <div class="section-header reveal">
+    <div class="section-num">03</div>
+    <div class="section-title-group">
+      <p class="section-eyebrow">Type</p>
+      <h2 class="section-title">Typographic <em>System</em></h2>
+      <p class="section-body">Two typefaces. One carries elegance and soul — the other carries clarity and function. Together they create a voice that is both warm and credible, intimate and trustworthy.</p>
+    </div>
+  </div>
+
+  <div class="type-showcase">
+    <div class="type-row reveal">
+      <div class="type-meta">
+        <div class="type-font-name">Display / Serif</div>
+        <div class="type-usage">Headlines, pull quotes, brand wordmark, display text, section titles, poetry, scripture references.</div>
+      </div>
+      <div>
+        <div class="type-sample-serif">Cormorant<br/><em>Garamond</em></div>
+      </div>
+    </div>
+    <div class="type-row reveal">
+      <div class="type-meta">
+        <div class="type-font-name">Body / Sans</div>
+        <div class="type-usage">Body copy, captions, labels, UI text, navigation, descriptions, episode notes.</div>
+      </div>
+      <div>
+        <div class="type-sample-sans">DM Sans — clean, warm, and readable at every size. It never competes with Cormorant Garamond; it supports it. Use weight 300 for body, 400 for UI, 500 for labels only.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-scale reveal">
+    <div class="type-scale-title">Type Scale</div>
+    <div class="type-scale-row">
+      <span class="scale-label">Display</span>
+      <span style="font-family:var(--serif);font-size:72px;font-weight:300;line-height:1;color:var(--charcoal);">Aa</span>
+      <span style="font-size:12px;color:var(--mid);margin-left:16px;align-self:center;">72px · Cormorant Garamond 300 · Hero titles only</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="scale-label">H1</span>
+      <span style="font-family:var(--serif);font-size:52px;font-weight:400;color:var(--charcoal);">Heading One</span>
+      <span style="font-size:12px;color:var(--mid);margin-left:16px;align-self:center;">52px · Garamond 400 · Section titles</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="scale-label">H2</span>
+      <span style="font-family:var(--serif);font-size:36px;font-weight:400;color:var(--charcoal);">Heading Two</span>
+      <span style="font-size:12px;color:var(--mid);margin-left:16px;align-self:center;">36px · Garamond 400 · Sub-section titles</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="scale-label">H3</span>
+      <span style="font-family:var(--serif);font-size:24px;font-weight:500;color:var(--charcoal);">Heading Three</span>
+      <span style="font-size:12px;color:var(--mid);margin-left:16px;align-self:center;">24px · Garamond 500 · Card titles</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="scale-label">Body</span>
+      <span style="font-family:var(--sans);font-size:15px;font-weight:300;color:var(--mid);">Body paragraph text — readable, warm, open.</span>
+      <span style="font-size:12px;color:var(--mid);margin-left:16px;align-self:center;">15px · DM Sans 300</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="scale-label">Label</span>
+      <span style="font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Category Label</span>
+      <span style="font-size:12px;color:var(--mid);margin-left:16px;align-self:center;">11px · DM Sans 400 · 3px tracking · All caps</span>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE SECTION -->
+<section id="voice" style="background:var(--light);">
+  <div class="section-header reveal">
+    <div class="section-num">04</div>
+    <div class="section-title-group">
+      <p class="section-eyebrow">Tone</p>
+      <h2 class="section-title">Brand <em>Voice</em></h2>
+      <p class="section-body">OurSpace speaks like a trusted couple in your life — honest, warm, scripturally grounded, and never performative. We are not a church, a therapist, or a celebrity brand. We are real people sharing what we're learning.</p>
+    </div>
+  </div>
+
+  <div class="voice-grid reveal">
+    <div class="voice-card do">
+      <span class="voice-tag">We Are</span>
+      <ul class="voice-items">
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text"><strong>Honest</strong> — We share our real experiences, including the hard ones. We don't present a highlight reel marriage.</div>
+        </li>
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text"><strong>Grounded in Scripture</strong> — The Word is our reference point, not opinion or popular culture. We exegete, we don't just quote.</div>
+        </li>
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text"><strong>Warm and Direct</strong> — We don't hedge endlessly. We say what we mean with kindness and conviction.</div>
+        </li>
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text"><strong>Culturally aware</strong> — We understand the Nigerian and African experience, and we speak to the global Christian couple without erasing that identity.</div>
+        </li>
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text"><strong>Purposeful</strong> — Every piece of content exists to strengthen marriages, not just to perform or entertain.</div>
+        </li>
+      </ul>
+    </div>
+    <div class="voice-card dont">
+      <span class="voice-tag">We Are Not</span>
+      <ul class="voice-items">
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text">Preachy or moralistic — we don't lecture, we share and invite.</div>
+        </li>
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text">Overly formal or distant — we don't write like an institution.</div>
+        </li>
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text">Celebrity-adjacent — we don't use our platform to build personal fame.</div>
+        </li>
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text">Shallow or motivational-poster-only — depth matters; we go there.</div>
+        </li>
+        <li class="voice-item">
+          <div class="voice-item-dot"></div>
+          <div class="voice-item-text">Therapy — we refer couples to professional help when appropriate and never position ourselves as mental health practitioners.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Dont's -->
+  <div class="section-header reveal" style="margin-top:80px;margin-bottom:32px;">
+    <div class="section-num" style="font-size:48px;color:rgba(125,26,46,.08);">✕</div>
+    <div class="section-title-group">
+      <p class="section-eyebrow">Logo Don'ts</p>
+      <h2 class="section-title">What to <em>Avoid</em></h2>
+    </div>
+  </div>
+  <div class="dont-grid reveal">
+    <div class="dont-card">
+      <div class="dont-preview" style="background:var(--cream-lt);">
+        <div class="cross-line"></div>
+        <span style="font-family:var(--serif);font-size:22px;letter-spacing:4px;color:var(--burgundy);transform:scaleX(1.6);">OURSPACE</span>
+      </div>
+      <div class="dont-label"><strong>Do not stretch</strong> Never distort the logo proportions horizontally or vertically.</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-preview" style="background:linear-gradient(135deg,#4a90d9,#7b5ea7);">
+        <div class="cross-line"></div>
+        <span style="font-family:var(--serif);font-size:22px;letter-spacing:4px;color:white;">OURSPACE</span>
+      </div>
+      <div class="dont-label"><strong>Do not use on off-brand backgrounds</strong> Only place the logo on Burgundy, Cream, Soft Cream, or Charcoal.</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-preview" style="background:var(--light);">
+        <div class="cross-line"></div>
+        <span style="font-family:var(--serif);font-size:22px;letter-spacing:4px;color:#4CAF50;">OURSPACE</span>
+      </div>
+      <div class="dont-label"><strong>Do not recolour</strong> The logo is only ever Burgundy (#7D1A2E) or Cream (#E8DFD0). Never in other colours.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIGITAL APPLICATIONS -->
+<section id="digital">
+  <div class="section-header reveal">
+    <div class="section-num">05</div>
+    <div class="section-title-group">
+      <p class="section-eyebrow">Applications</p>
+      <h2 class="section-title">Digital <em>Presence</em></h2>
+      <p class="section-body">OurSpace lives across YouTube, Instagram, TikTok, and Podcast platforms. The visual identity stays consistent across all of them — same colours, same type, same warmth.</p>
+    </div>
+  </div>
+
+  <div class="apps-grid reveal">
+    <div class="app-card">
+      <div class="app-preview instagram">
+        <div class="mock-insta">
+          <div class="mock-insta-brand">OURSPACE</div>
+          <div class="mock-insta-quote">"Marriage is harder than anyone told us. And more beautiful."</div>
+        </div>
+      </div>
+      <div class="app-label">
+        <span class="app-name">Instagram · Quote Card</span>
+        <span class="app-spec">1080 × 1080px</span>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-preview youtube">
+        <div class="mock-thumb">
+          <div class="mock-thumb-tag">OurSpace · Episode 04</div>
+          <div class="mock-thumb-title">What submission actually means — and what culture got wrong</div>
+        </div>
+      </div>
+      <div class="app-label">
+        <span class="app-name">YouTube · Thumbnail</span>
+        <span class="app-spec">1280 × 720px</span>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-preview podcast">
+        <div class="mock-podcast">
+          <div class="mock-podcast-name">OURSPACE</div>
+          <div class="mock-podcast-sub">The Podcast</div>
+        </div>
+      </div>
+      <div class="app-label">
+        <span class="app-name">Podcast · Cover Art</span>
+        <span class="app-spec">3000 × 3000px</span>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-preview email">
+        <div style="width:320px;background:white;border:1px solid rgba(28,28,28,.08);">
+          <div style="background:var(--burgundy);padding:20px 24px;display:flex;align-items:center;gap:10px;">
+            <span style="font-family:var(--serif);font-size:16px;letter-spacing:4px;color:var(--cream);">OURSPACE</span>
+          </div>
+          <div style="padding:24px;">
+            <div style="font-family:var(--serif);font-size:20px;color:var(--charcoal);margin-bottom:8px;">New Episode Out Now</div>
+            <div style="font-size:12px;line-height:1.7;color:var(--mid);">This week we're talking about something nobody in church discusses honestly...</div>
+            <div style="margin-top:16px;display:inline-block;background:var(--burgundy);color:var(--cream);font-size:11px;letter-spacing:2px;padding:8px 18px;">LISTEN NOW</div>
+          </div>
+        </div>
+      </div>
+      <div class="app-label">
+        <span class="app-name">Email Newsletter</span>
+        <span class="app-spec">600px max-width</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo style -->
+  <div class="section-header reveal" style="margin-top:80px;">
+    <div class="section-num" style="font-size:48px;">📷</div>
+    <div class="section-title-group">
+      <p class="section-eyebrow">Imagery Style</p>
+      <h2 class="section-title">Photography <em>Direction</em></h2>
+    </div>
+  </div>
+  <div class="photo-rules reveal">
+    <div class="photo-rule">
+      <div class="photo-rule-num">01</div>
+      <div class="photo-rule-title">Warm and Natural</div>
+      <div class="photo-rule-desc">Use warm-toned, naturally lit photography. No harsh studio lighting, no cold blue tones. The aesthetic is candid intimacy — couples in their real space.</div>
+    </div>
+    <div class="photo-rule">
+      <div class="photo-rule-num">02</div>
+      <div class="photo-rule-title">Real Over Perfect</div>
+      <div class="photo-rule-desc">Prefer genuine moments over posed perfection. Laughing mid-sentence, thoughtful eye contact, quiet togetherness — these speak louder than curated beauty shots.</div>
+    </div>
+    <div class="photo-rule">
+      <div class="photo-rule-num">03</div>
+      <div class="photo-rule-title">No Stock Faces</div>
+      <div class="photo-rule-desc">Never use generic stock couple photography. OurSpace imagery is always of real couples — ideally us, or with explicit permission from the couples featured.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">OURSPACE</div>
+    <p class="footer-statement">Helping Christian couples build marriages that actually work. Not perfect — real. Not performed — lived. Built on faith, honesty, and the conviction that God has more for your marriage than you've seen yet.</p>
+  </div>
+  <div class="footer-meta">
+    <div class="footer-version">Brand Guidelines · Version 1.0 · 2025</div>
+    <div class="footer-copy">© OurSpace. All brand assets are proprietary and may not be reproduced without permission.</div>
+  </div>
+</footer>
+
+<!-- NAV DOTS -->
+<div class="page-dots" id="pageDots">
+  <button class="page-dot active" data-target="top"></button>
+  <button class="page-dot" data-target="logo"></button>
+  <button class="page-dot" data-target="colour"></button>
+  <button class="page-dot" data-target="typography"></button>
+  <button class="page-dot" data-target="voice"></button>
+  <button class="page-dot" data-target="digital"></button>
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav dots
+  const sections = ['top','logo','colour','typography','voice','digital'];
+  const dots = document.querySelectorAll('.page-dot');
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const target = document.getElementById(dot.dataset.target);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const sectionEls = sections.map(id => document.getElementById(id)).filter(Boolean);
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY + window.innerHeight / 2;
+    let current = 0;
+    sectionEls.forEach((el, i) => {
+      if (el && el.offsetTop <= scrollY) current = i;
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  });
+</script>
+</body>
+</html>
